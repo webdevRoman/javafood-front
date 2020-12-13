@@ -8,6 +8,7 @@ import axios from 'axios'
 
 export default {
   created() {
+    axios.defaults.baseURL = 'https://app-javafood-azure.azurewebsites.net
     axios.interceptors.response.use(undefined, function (err) {
       return new Promise(function (resolve, reject) {
         if (err.status === 401 && err.config && !err.config.__isRetryRequest) {
